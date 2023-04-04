@@ -1,65 +1,46 @@
-/* Set background color to lime green */
 body {
-    background-color: rgb(90, 246, 90);
-  }
+  background-color: rgb(199, 226, 111);
+  font-size: larger;
   
-  /* Center h1 and h2 */
-  .intro {
-    text-align: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  
-  /* Resize images to 150px */
+
+}
+  /* Resize images to 200px */
   img {
-    width: 200px;
-  }
-  
-  /* Position grocery list to the left */
-  .grocery-list-container {
-    float: left;
-    margin-right: 20px;
-    padding: 10px;
-  }
-  
-  /* Style grocery list */
+      width: 200px;
+    }  /* Resize images to 150px */
+    img {
+      width: 300px;
+    }
+     /* Center h1 and h2 */
+.intro h2 {
+  text-align: center;
+  background-color: rgb(48, 182, 48);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: x-large;
+  font-style: oblique;
+  padding: 5px;
+  height:40px;
+}
+
+/* Style grocery list */
   .groceries-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .groceries-list li {
-    margin-bottom: 10px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .groceries-list li img {
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-  
-  /* Style grocery details */
-  .details-container {
-    overflow: hidden;
-  }
-  
-  #details {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  #buy-basket {
-    background-color: rgb(33, 33, 60);
-    color: white;
-    padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  #buy-basket:hover {
-    background-color: rgb(25, 25, 43);
-  }
+      list-style: none;
+      padding: 2px;
+      margin: 0;
+    }
+
+    .groceries-list li {
+      margin-bottom: 10px;
+      font-size: 15px; 
+    }
+    .groceries-list li img {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+/* Position grocery list to the left */
+.grocery-list-container {
+  float: center;
+  margin-right: 20px;
+  padding: 10px;
+}
+    

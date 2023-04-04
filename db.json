@@ -4,9 +4,10 @@
         "id": "1",
         "name": "Single's Basket",
         "vegetable": "Onion 5pcs, Tomato 5pcs, Carrot 3pcs, Ginger 1pc, Garlic 1pc, 1kg MinceBeef, 1Chicken, Bread 1pc, Milk 4pcs, 6eggs",
-        "description": "A grocery meal pack that caters to 1 person for 1week",
         "fruit":"2apples, 2oranges or other fruit in season ",
         "price":"2,500/=",
+        "description": "A grocery meal pack that caters to 1 person for 1week",
+        "orders":" ",
         "image": "https://previews.123rf.com/images/monticello/monticello1108/monticello110800014/10069209-groceries-in-wicker-basket-isolated-on-white.jpg"
       },
       {
@@ -16,6 +17,7 @@
         "fruit":"4apples, 4oranges or other fruit in season ",
         "price":"4,000/=",
         "description": "A grocery meal pack that caters to 2 people for 1week",
+        "orders":" ",
         "image": "https://previews.123rf.com/images/xfotostudio/xfotostudio1606/xfotostudio160600100/59253710-healthy-food-shopping-a-basket-full-with-shopping-products-and-ingredients-organic-vegetables-and.jpg"
         
       },
@@ -26,6 +28,7 @@
         "fruit":"6apples, 6oranges or other fruit in season ",
         "price":"6,000/=",
         "description": "This grocery meal pack that caters to a family of 4/5 people for 1week",
+        "orders":" ",
         "image": "https://cdn.w600.comps.canstockphoto.com/wicker-basket-with-groceries-isolated-on-stock-photo_csp22364041.jpg"
   
       },
@@ -34,6 +37,7 @@
       "name": "Custom Basket",
       "vegetable": "Place custom order via form",
       "description": "Order according to your needs",
+      "orders":" ",
       "image": "https://images.unsplash.com/photo-1609780447631-05b93e5a88ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
     
 

@@ -3,78 +3,47 @@ document.addEventListener("DOMContentLoaded", () => {
   const groceryList = document.createElement("ul");
   groceryList.id = "groceries";
   groceryList.classList.add("groceries-list");
-  const grocery = document.getElementById("groceries");
 
   function displayGroceries() {
     fetch("http://localhost:3000/groceries")
       .then((res) => res.json())
-      .then((data) => {
-        // console.log(data)
-        const groceries = data; // Rename `data` to `groceries` for clarity
-        const firstProduct = groceries[0];
-        // console.log(firstProduct)
+      .then((groceries) => {
+        groceries.forEach((item) => {
+          // console.log(data)
 
-        //add each title to list and add event listener
-        groceries.forEach((groceries) => {
-          const list = document.createElement("li");
-          list.classList.add("groceries");
-          list.textContent = groceries.name;
-          groceryList.appendChild(list);
+          //adding some code here
 
-          list.addEventListener("click", () => {
-            const groceryDetails = `
-              <div class="card">
-                <img src="${groceries.image}" class="card-img" alt="${groceries.name}">
-                <div class="card-body">
-                  <h4 id="product-name">${groceries.name}</h4>
-                  <p id="veges"> Veges: ${groceries.vegetable} </p>
-                  <p id="fruit"> Fruit: ${groceries.fruit} </p>
-                  <p id="description">${groceries.description} </p>
-                  <p id="price"> Price: ${groceries.price} </p>
-                  <div id="buy-basket" class="btn btn-primary">Buy Basket
-                  </div>
-                </div>
-              </div>
-            `;
-            document.getElementById("details").innerHTML = groceryDetails;
+          let card = document.createElement("li");
+          card.className = "card";
+          card.innerHTML = `
+    <img src="${item.image}" class="card-img" alt="${item.name}">
+    <div class="card-body">
+    <h4 id="product-name">${item.name}</h4>
+    <p id="veges"> Veges: ${item.vegetable} </p>
+    <p id="fruit"> Fruit: ${item.fruit} </p>
+     <p id="description">${item.description} </p>
+    <p id="price"> Price: ${item.price} </p>
+    <button id="buy-basket${item.id}" class="btn btn-primary">Buy Basket
+    </button>
+    </div>
+                                  
+    `;
+          //add baskets to DOM
+          document.querySelector("#groceries").appendChild(card);
 
-            //matata
-            //add event listener for each grocery basket we have for sale once it is clicked
-            document.querySelectorAll(".card").forEach((div) => {
-              div.addEventListener("click", (e) => {
-                let target = e.target.parentNode;
-                if (target.childNodes.length < 2) {
-                  let grocery1 = groceries.find(
-                    (item) =>
-                      item.name ===
-                      target.querySelector("#product-name").textContent
-                  );
+          //add event listener to buy button
+          const buyBtn = document.getElementById(`buy-basket${item.id}`);
 
-                  let innercard = `
-                      <div class="card">
-                      <img src="${grocery1.image}" class="card-img" alt="${grocery1.name}">
-                      <div class="card-body">
-                        <h4 id="product-name">${grocery1.name}</h4>
-                        <p id="veges">${grocery1.vegetable} </p>
-                        <p id="fruit">${grocery1.fruit} </p>
-                        <p id="description">${grocery1.description} </p>
-                        <p id="price"> ${grocery1.price} </p>
-                        <div id="buy-basket" class="btn btn-primary">Buy Basket
-                        </div>
-                      </div>
-                    </div>
-                  `;
-                  target.innerHTML = innercard;
-                } else {
-                  target.innerHTML = " ";
-                }
-              });
-            });
+          //add event listener to buy button
+          buyBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            //console.log("clicked")
+            order++;
+            console.log(`Orders: ${order}`);
           });
         });
-        grocery.appendChild(groceryList);
       });
   }
-
+  let order = 0;
   displayGroceries();
 });
