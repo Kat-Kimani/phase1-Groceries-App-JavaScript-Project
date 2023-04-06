@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: rgb(238, 242, 198);
   font-size: larger;
 
 }
@@ -7,13 +7,15 @@ body {
   img {
       width: 200px;
     } 
-    .intro h1 {
+
+.intro h1 {
 text-align: center;
 font-size:x-large;
 height:30px;
 padding: 5px;
     }
-/* Center h1 and h2 */
+    
+/* Center h2 */
 .intro h2 {
   text-align: center;
   background-color: rgb(48, 182, 48);
@@ -23,6 +25,7 @@ padding: 5px;
   padding: 5px;
   height:30px;
 }
+
 .intro image {
   float: left;
   padding-top: 5px;
@@ -31,7 +34,7 @@ padding: 5px;
   margin-top: 10px;
   font-size: xx-large;
   font-weight: 800;
-  font-family: Lobster;
+  
 
 }
 /* Style grocery list */
@@ -50,20 +53,32 @@ padding: 5px;
       margin-right: 10px;
       vertical-align:auto;
     }
-/* Position grocery list to the left */
+/* Position grocery list */
 .grocery-list-container {
-  float: center;
+display: flex;
   margin-right: 20px;
   padding: 10px;
+
 }
 
-
-
+.grocery {
+  display: flex;
+  flex-wrap: wrap;
+  border: solid 2px #65b290;
+  border-radius: 20px;
+  margin-left: 100px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 10px #688f7b;
+}
+/*
 .grocery-list-container{
   width: 20%;
   height: 400px;
+  display:inline-block;
   text-align: center;
-  float: left;
+  display: flex;
+  flex-wrap: wrap;
   border: solid 2px  #65b290;
   border-radius: 20px;
   margin-left: 100px;
@@ -71,4 +86,18 @@ padding: 5px;
   margin-bottom: 20px;
   box-shadow: 5px 5px 10px #688f7b;
 
+}*/
+
+
+
+/* Set fixed width for each item element */
+.grocery {
+  width: 200px;
+  margin: 10px;
+  display: inline-block;
+}
+
+/* Add spacing between item elements */
+.item:not(:last-child) {
+  margin-right: 20px;
 }

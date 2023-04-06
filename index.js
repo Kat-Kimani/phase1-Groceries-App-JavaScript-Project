@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <p id="fruit"> Fruit: ${item.fruit} </p>
      <p id="description">${item.description} </p>
     <p id="price"> Price: ${item.price} </p>
+    <div id="order-count">0</div>
     <button id="buy-basket${item.id}" class="btn btn-primary">Buy Basket
     </button>
     </div>
@@ -40,10 +41,45 @@ document.addEventListener("DOMContentLoaded", () => {
             //console.log("clicked")
             order++;
             console.log(`Orders: ${order}`);
+            document.querySelector("#order-count").textContent = order;
           });
         });
       });
+
+    const customOrderForm = document.querySelector("form");
+
+    function getInputData(event) {
+      // Prevent default form submission behavior
+      event.preventDefault();
+      // Get input data from form
+      let name = document.getElementById("name").value;
+      let order = document.getElementById("textBox").value;
+
+      // Reset form
+      document.getElementById("name").value = "";
+      document.getElementById("textBox").value = "";
+
+      // Pass order data to the placeOrder function
+      placeOrder({ name: name, order: order });
+    }
+
+    customOrderForm.addEventListener("submit", getInputData);
+
+    //POST METHOD used to add an order through the order form
+    function placeOrder(order) {
+      fetch("http://localhost:3000/groceries", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(order),
+      })
+        .then((resp) => resp.json())
+        .then((groceries) => console.log(groceries));
+    }
   }
+
   let order = 0;
   displayGroceries();
 });
