@@ -49,8 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const customOrderForm = document.querySelector("form");
 
     function getInputData(event) {
-      // Prevent default form submission behavior
-      event.preventDefault();
+      event.preventDefault(); // Prevent default form submission behavior
       // Get input data from form
       let name = document.getElementById("name").value;
       let order = document.getElementById("textBox").value;
@@ -74,10 +73,37 @@ document.addEventListener("DOMContentLoaded", () => {
           Accept: "application/json",
         },
         body: JSON.stringify(order),
-      })
-        .then((resp) => resp.json())
-        .then((groceries) => console.log(groceries));
+      }).then(resp);
+      //=> resp.json())
+      // .then((order) => console.log(groceries));
     }
+    function searchItems() {
+      const searchValue = document.getElementById("search").value.toLowerCase();
+      const cards = document.querySelectorAll(".card");
+
+      cards.forEach((card) => {
+        const name = card
+          .querySelector("#product-name")
+          .textContent.toLowerCase();
+        const vegetable = card
+          .querySelector("#veges")
+          .textContent.toLowerCase();
+        const fruit = card.querySelector("#fruit").textContent.toLowerCase();
+
+        if (
+          name.includes(searchValue) ||
+          vegetable.includes(searchValue) ||
+          fruit.includes(searchValue)
+        ) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    const searchBtn = document.getElementById("search-btn");
+    searchBtn.addEventListener("click", searchItems);
   }
 
   let order = 0;
