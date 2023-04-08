@@ -41,38 +41,14 @@
       "image": "https://cdn.w600.comps.canstockphoto.com/wicker-basket-with-groceries-isolated-on-stock-photo_csp22364041.jpg"
     },
     {
-      "name": "faith",
-      "vegetable": "carrots",
-      "fruit": "apple",
-      "price": "20",
-      "description": "deliver",
-      "id": "oZseFkO"
-    },
-    {
-      "name": "faith",
-      "vegetable": "carrots",
-      "fruit": "apple",
-      "price": "20",
-      "description": "deliver",
-      "id": "QiKMJyZ"
-    },
-    {
       "image": "https://previews.123rf.com/images/rtimages/rtimages1404/rtimages140400012/27776595-wire-shopping-basket-full-of-groceries-including-fresh-fruit-vegetables-milk-wine-meat-and-dairy.jpg",
       "name": "Meaty Basket",
       "vegetable": "Sausages, Bacon, Salami, Ham",
       "fruit": "Grapes, Apricots",
       "price": "4000",
       "description": "For Meat Lovers",
-      "id": "iioh99t"
-    },
-    {
-      "image": " ",
-      "name": " ",
-      "vegetable": "",
-      "fruit": "",
-      "price": "",
-      "description": "",
-      "id": "haQYEHX"
+      "id": "iioh99t",
+      "orderCount": {}
     }
   ]
 }

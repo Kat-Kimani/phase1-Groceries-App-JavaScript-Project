@@ -26,16 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
     <div id="order-count${item.id}">0</div>
     <button id="buy-basket${item.id}" class="btn btn-primary">Buy Basket
     </button>
+    <button id="delete" class="btn btn-primary">Delete
+    </button>
     </div>
                                   
     `;
+
           //add baskets to DOM
           document.querySelector("#groceries").appendChild(card);
 
           //add event listener to buy button
           const buyBtn = document.getElementById(`buy-basket${item.id}`);
 
-          //add event listener to buy button
+          //add event listener to buy button and increment orders
           buyBtn.addEventListener("click", (event) => {
             event.preventDefault();
             //console.log("clicked")
@@ -43,6 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(`Orders: ${order}`);
             const orderCount = document.querySelector(`#order-count${item.id}`);
             orderCount.textContent = parseInt(orderCount.textContent) + 1;
+            console.log(orderCount);
+            addOrders(item.id, orderCount);
+          });
+
+          //delete item from DOM and Server
+          card.querySelector("#delete").addEventListener("click", () => {
+            console.log("test");
+            card.remove();
+
+            deleteBasket(item.id);
           });
         });
       });
@@ -103,6 +116,7 @@ function placeOrder(order) {
     .then((resp) => resp.json())
     .then((grocery) => console.log(grocery));
 }
+
 // Define updateBasket function to edit
 function updateBasket(basketObj) {
   fetch(`http://localhost:3000/groceries/${item.name}`, {
@@ -116,6 +130,19 @@ function updateBasket(basketObj) {
     .then((grocery) => console.log(grocery));
 }
 
+function addOrders(item, orderCount) {
+  console.log(item);
+  fetch(`http://localhost:3000/groceries/${item.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ orderCount }),
+  })
+    .then((resp) => resp.json())
+    .then((orderCount) => console.log(orderCount));
+}
+
 // Add event listener for each "Update Basket" button
 const editBtn = document.querySelector("#edit-button");
 editBtn.forEach((btn) => {
@@ -123,15 +150,13 @@ editBtn.forEach((btn) => {
     event.preventDefault();
 
     // Retrieve the item ID and form inputs
-    const itemId = btn.getAttribute("data-id");
+
     const imageUrl = document.querySelector("#image-url").value;
     const productName = document.querySelector("#product-names").value;
     const vegetables = document.querySelector("#vegez").value;
     const fruits = document.querySelector("#fruits").value;
     const price = document.querySelector("#prices").value;
     const description = document.querySelector("#descriptions").value;
-
-    //const itemId = btn.getAttribute("data-id");
 
     // Construct the updated basket object
     const basketObj = {
@@ -146,6 +171,17 @@ editBtn.forEach((btn) => {
     updateBasket(basketObj);
   });
 });
+
+function deleteBasket(id) {
+  fetch(`http://localhost:3000/groceries/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((item) => console.log(item));
+}
 
 function searchItems() {
   const searchValue = document.getElementById("search").value.toLowerCase();
