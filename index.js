@@ -149,7 +149,7 @@ editBtn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    // Retrieve the item ID and form inputs
+    // Retrieve the item ID and form inputs and update basket
 
     const imageUrl = document.querySelector("#image-url").value;
     const productName = document.querySelector("#product-names").value;
