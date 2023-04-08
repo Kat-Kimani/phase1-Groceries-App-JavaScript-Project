@@ -32,21 +32,47 @@
     },
     {
       "id": "4",
-      "name": "Custom Basket",
-      "vegetable": "Place custom order via form",
-      "description": "Order according to your needs",
+      "name": "Bi-Weekly Basket",
+      "vegetable": "Onion 20pcs, Tomato 20pcs, Ginger 4pc, Garlic 4pc, 2kg Beef, 2kg MinceBeef, 2Chicken",
+      "fruit": "10apples, 10oranges or other fruit in season ",
+      "price": "8,000/=",
+      "description": "This grocery meal pack that caters to a single/double for 2weeks",
       "orders": " ",
-      "image": "https://images.unsplash.com/photo-1609780447631-05b93e5a88ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+      "image": "https://cdn.w600.comps.canstockphoto.com/wicker-basket-with-groceries-isolated-on-stock-photo_csp22364041.jpg"
     },
     {
-      "name": "kat",
-      "order": "carrots, eggplant",
-      "id": "94HSoO_"
+      "name": "faith",
+      "vegetable": "carrots",
+      "fruit": "apple",
+      "price": "20",
+      "description": "deliver",
+      "id": "oZseFkO"
     },
     {
-      "name": "ella",
-      "order": "carrots, eggplant",
-      "id": "VdgwYBt"
+      "name": "faith",
+      "vegetable": "carrots",
+      "fruit": "apple",
+      "price": "20",
+      "description": "deliver",
+      "id": "QiKMJyZ"
+    },
+    {
+      "image": "https://previews.123rf.com/images/rtimages/rtimages1404/rtimages140400012/27776595-wire-shopping-basket-full-of-groceries-including-fresh-fruit-vegetables-milk-wine-meat-and-dairy.jpg",
+      "name": "Meaty Basket",
+      "vegetable": "Sausages, Bacon, Salami, Ham",
+      "fruit": "Grapes, Apricots",
+      "price": "4000",
+      "description": "For Meat Lovers",
+      "id": "iioh99t"
+    },
+    {
+      "image": " ",
+      "name": " ",
+      "vegetable": "",
+      "fruit": "",
+      "price": "",
+      "description": "",
+      "id": "haQYEHX"
     }
   ]
 }

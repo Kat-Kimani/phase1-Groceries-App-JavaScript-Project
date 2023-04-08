@@ -8,40 +8,81 @@
 </head>
 
 <body>
+    <div class="intro">
+        <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b0e07777924473.5c95c14d2b8d4.png" id="logo" alt="logo" height="100"> 
+        <h1>   FRESH OR FROZEN</h1>
+        <img src= "https://blog.eduonix.com/wp-content/uploads/2019/02/Image-1-1.jpg" id="menu" >
+    </div>
+
+    <h2>Your Soul food delivery for the Week</h2>
+
+    <div>
+        <input type="text" id="search" placeholder="Search items...">
+        <button id="search-btn">Search</button>
+      </div>
+
+
     <div class= "container" id = "groceries-bar">
-        <div class="intro">
-            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/b0e07777924473.5c95c14d2b8d4.png" alt="logo" height="100"> 
-            <h1>   FRESH OR FROZEN</h1>
-            <h2>Your Soul food delivery for the Week</h2>
-        </div>
-        <div>
-            <input type="text" id="search" placeholder="Search items...">
-            <button id="search-btn">Search</button>
-          </div>
-        
-            <div class="grocery-list-container">
+            <!-- <div class="grocery-list-container"> -->
                 <ul id="groceries" class="groceries-list">
                     <!-- Grocery 4 main products will be added dynamically by JavaScript -->
                 </ul>
-             
-            </div>
-
-            <div class="details-container">
-                <div id="details">
-                    <!-- Grocery details per basket will be added dynamically by JavaScript -->
-                </div>
-            </div>
+<!--              
+            </div><br><br> -->
 
         </div>
-<div>
-        <form onsubmit= "getInputData()">
-            <label for="name"> Name </label><br>
-            <input type="text" id="name" placeholder="Enter Your Name"><br><br>
-            <label for="order"> Custom Order</label> <br>
-            <input type="text" name="textBox" id="textBox" placeholder="Order your Custom Basket Here "><br><br>
-            <input type="submit" id= "submit-button" value="submit"><br><br>
-        
+
+    <div class="forms-container">
+      
+        <form id= "create-form" onsubmit= "getInputData(event)" ><br>
+            <label for="name"> Admin - Create Item  </label><br><br>
+
+            <label for="Image">Image URL:</label><br>
+            <input type="text" id="image-url" placeholder="Enter Image URL"><br><br>
+
+            <label for="Name"> New Product Name </label><br>
+            <input type="text" id="product-names" placeholder="Enter New Product  Name"><br><br>
+
+            <label for="Vegetable"> Veges: </label> <br>
+            <input type="text"  id="vegez" placeholder="Vegetables "><br><br>
+
+            <label for="Fruit"> Fruit: </label> <br>
+            <input type="text"  id="fruits" placeholder="Fruit "><br><br>
+
+            <label for="Price"> Price: </label> <br>
+            <input type="text"  id="prices" placeholder=" Price "><br><br>
+
+            <label for="Description"> Description: </label> <br>
+            <input type="text"  id="descriptions" placeholder="Caption/Description]"><br><br>
+
+            <input type="submit" id= "submit-button" value="Submit"><br><br>
+          
         </form> <br><br>
+   
+   
+    <form id="update-form">
+        <label for="name"> Admin - Edit Item  </label><br><br>
+        <label for="image-url">Image URL:</label><br>
+        <input type="text" id="image-url" name="image-url"><br><br>
+      
+        <label for="product-name">Product Name:</label><br>
+        <input type="text" id="product-names" name="product-names"><br><br>
+      
+        <label for="vegez">Vegetables:</label><br>
+        <input type="text" id="vegez" name="vegez"><br><br>
+      
+        <label for="fruits">Fruits:</label><br>
+        <input type="text" id="fruits" name="fruits"><br><br>
+      
+        <label for="prices">Price:</label><br>
+        <input type="text" id="prices" name="prices"><br><br>
+      
+        <label for="descriptions">Description:</label><br>
+        <input type="text" id="descriptions" name="descriptions"><br><br>
+      
+        <input type="submit" id= "edit-button" value="Edit"><br><br><br>
+      </form>
+
     </div>
 
         <script src="index.js"></script>

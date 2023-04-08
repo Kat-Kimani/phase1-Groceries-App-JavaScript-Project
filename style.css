@@ -1,21 +1,39 @@
 body {
-  background-color: rgb(238, 242, 198);
+  background-color: rgb(235, 250, 77);
   font-size: larger;
 
 }
-  /* Resize images to 200px */
-  img {
-      width: 200px;
+
+img {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  padding: 20px;
+  margin: 20px;
+ 
     } 
+
+.intro{
+display: flex;
+justify-content: space-between ;
+
+}
 
 .intro h1 {
 text-align: center;
-font-size:x-large;
+font-size: 40px;
 height:30px;
 padding: 5px;
     }
-    
-/* Center h2 */
+
+#menu{
+width:100px;
+height:100px;
+mix-blend-mode: multiply;
+
+
+}
+
 .intro h2 {
   text-align: center;
   background-color: rgb(48, 182, 48);
@@ -37,33 +55,46 @@ padding: 5px;
   
 
 }
-/* Style grocery list */
+/* Style grocery list*/
   .groceries-list {
+    display: grid;
       list-style: none;
-      padding: 1px black solid;
-      margin: 0;
-    }
+      padding: 20px;
+      margin: 20px;
+
+      background-color: rgb(176, 210, 210);
+      grid-template-columns: repeat(3, 1fr);
+      border: 2px solid black;
+      border-radius: 10px ;
+      grid-gap: 20px;
+  }
 
     .groceries-list li {
       margin-bottom: 5px;
       font-size: 15px;
-      text-align: justify; 
+    /* height: 80%; */
+      border: 2px solid black; 
+      background-color: rgb(197, 245, 201);
+      border-radius: 10px;
+      align-content: center;
+
     }
+
     .groceries-list li img {
       margin-right: 10px;
       vertical-align:auto;
     }
-/* Position grocery list */
-.grocery-list-container {
-display: flex;
-  margin-right: 20px;
-  padding: 10px;
-
+.grocery-list-container{
+width: 100%;
+  background-color: aliceblue;
+  border: 2px solid black;
+  align-items: center;
 }
 
+
 .grocery {
-  display: flex;
-  flex-wrap: wrap;
+
+
   border: solid 2px #65b290;
   border-radius: 20px;
   margin-left: 100px;
@@ -71,33 +102,76 @@ display: flex;
   margin-bottom: 20px;
   box-shadow: 5px 5px 10px #688f7b;
 }
-/*
-.grocery-list-container{
-  width: 20%;
-  height: 400px;
-  display:inline-block;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  border: solid 2px  #65b290;
-  border-radius: 20px;
-  margin-left: 100px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  box-shadow: 5px 5px 10px #688f7b;
-
-}*/
 
 
-
-/* Set fixed width for each item element */
 .grocery {
   width: 200px;
-  margin: 10px;
+  margin-left: 50px;
   display: inline-block;
 }
 
-/* Add spacing between item elements */
-.item:not(:last-child) {
-  margin-right: 20px;
+
+
+fieldset {
+  width: 35%;
+  height: 700px;
+  margin: 10px;
+}
+
+
+label {
+
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+input[type="text"] {
+  height: 40px;
+  width: 300px;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 2px;
+font-size: small;
+  border-radius: 2px;
+  border: none;
+  margin-bottom: 2px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  font-size: medium;
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+}
+
+input[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.container{
+/* display:grid; */
+grid-template-columns: repeat(3, 1fr);
+border: 2px solid black;
+background-color: #65b290;
+height: 90%;
+
+}
+#logo{
+font-size: 10px;
+width: 150px;
+height: 150px;
+border: 3px solid black;
+border-radius: 50%;
+
+
+}
+
+.forms-container{
+  display: flex;
+  flex-direction: column;
+
 }
