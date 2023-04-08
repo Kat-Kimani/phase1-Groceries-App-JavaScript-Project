@@ -119,7 +119,7 @@ function placeOrder(order) {
 
 // Define updateBasket function to edit
 function updateBasket(basketObj) {
-  fetch(`http://localhost:3000/groceries/${item.name}`, {
+  fetch(`http://localhost:3000/groceries/${item.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -144,7 +144,7 @@ function addOrders(item, orderCount) {
 }
 
 // Add event listener for each "Update Basket" button
-const editBtn = document.querySelector("#edit-button");
+const editBtn = document.querySelectorAll("#edit-button");
 editBtn.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     event.preventDefault();
